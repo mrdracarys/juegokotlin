@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_launcher_background"
+    android:background="@drawable/pekomenfondo"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -19,6 +19,23 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="PikaPikaChu"
+            android:textAllCaps="true"
+            android:textColor="#023947"
+            android:textSize="34sp"
+            android:textStyle="bold|italic" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="169dp"
+            app:srcCompat="@drawable/pokeball" />
 
         <EditText
             android:id="@+id/nombre"
@@ -46,5 +63,6 @@
             android:layout_height="wrap_content"
             android:onClick="cambiarventana"
             android:text="Play" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
