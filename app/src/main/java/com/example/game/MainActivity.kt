@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     fun cambiarventana(view: View){
         val edd:EditText=findViewById(R.id.edad) as EditText
         var ne:Int=edd.text.toString().toInt()
-       if(ne>5) {
+       if(ne>=5) {
            val inte = Intent(applicationContext, juego::class.java)
            val nombre: EditText = findViewById(R.id.nombre) as EditText
 
