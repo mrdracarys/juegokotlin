@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,11 +13,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
     fun cambiarventana(view: View){
-        val inte=Intent(applicationContext,juego::class.java)
-        val nombre:EditText=findViewById(R.id.nombre) as EditText
         val edd:EditText=findViewById(R.id.edad) as EditText
-        inte.putExtra("entrada",nombre.text.toString())
-        inte.putExtra("edad",edd.text.toString())
-        startActivity(inte)
+        var ne:Int=edd.text.toString().toInt()
+       if(ne>5) {
+           val inte = Intent(applicationContext, juego::class.java)
+           val nombre: EditText = findViewById(R.id.nombre) as EditText
+
+           inte.putExtra("entrada", nombre.text.toString())
+           inte.putExtra("edad", edd.text.toString())
+           startActivity(inte)
+       } else{
+           Toast.makeText(applicationContext,"Usted debe tener una edad superior a 5.", Toast.LENGTH_SHORT).show()
+       }
     }
 }

@@ -27,7 +27,7 @@
             android:hint="Escriba su nombre"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Name" />
+             />
 
         <EditText
             android:id="@+id/edad"
@@ -37,7 +37,7 @@
             android:hint="Escriba su edad"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Name" />
+             />
 
         <Button
             android:id="@+id/cambio"
