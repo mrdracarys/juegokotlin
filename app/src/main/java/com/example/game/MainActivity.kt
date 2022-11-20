@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val compartido=this.getSharedPreferences("com.example.game", android.content.Context.MODE_PRIVATE)
+        compartido.edit().putInt("maximo", 0).apply()
     }
     fun cambiarventana(view: View){
         val edd:EditText=findViewById(R.id.edad) as EditText

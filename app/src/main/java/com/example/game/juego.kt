@@ -36,6 +36,8 @@ class juego : AppCompatActivity() {
         var ima14:ImageView=findViewById(R.id.imageView26) as ImageView
         var ima15:ImageView=findViewById(R.id.imageView27) as ImageView
         var ima16:ImageView=findViewById(R.id.imageView28) as ImageView
+        val compartido=this.getSharedPreferences("com.example.game", android.content.Context.MODE_PRIVATE)
+        var final=compartido.getInt("maximo",0)
 
         arregloimagen= arrayListOf(ima1,ima2,ima3,ima4,ima5,ima6,ima7,ima8,ima9,ima10,ima11,ima12,ima13,ima14,ima15,ima16,)
 
@@ -44,13 +46,15 @@ class juego : AppCompatActivity() {
         val re:String? = intencion.getStringExtra("entrada")
         titulo.text=re
         puntos=0
-        ocultar()
 
         var tie:TextView=findViewById(R.id.tiempo) as TextView
         var max:TextView=findViewById(R.id.maximo) as TextView
+        max.text=final.toString()
 
+        ocultar()
         object :CountDownTimer(10000,1000){
             override fun onFinish() {
+                compartido.edit().putInt("maximo", puntos).apply()
                 handler.removeCallbacks(runn)
                 for (ima in arregloimagen){
                     ima.visibility=View.INVISIBLE
